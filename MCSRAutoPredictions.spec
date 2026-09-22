@@ -24,7 +24,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name="AutoPredictions",
+    name="MCSRAutoPredictions",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

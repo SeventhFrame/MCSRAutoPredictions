@@ -9,9 +9,9 @@ if (-not (Test-Path $venvPython)) {
 
 & $venvPython -m pip install --upgrade pip
 & $venvPython -m pip install -r requirements.txt pyinstaller
-& $venvPython -m PyInstaller --clean --noconfirm MCSRAutoPredictions.spec
+& $venvPython -m PyInstaller --clean --noconfirm --distpath . MCSRAutoPredictions.spec
 
-$artifact = "dist\MCSRAutoPredictions.exe"
+$artifact = "MCSRAutoPredictions.exe"
 if (Test-Path $artifact) {
     Get-FileHash $artifact -Algorithm SHA256
     Write-Host "Built $artifact"

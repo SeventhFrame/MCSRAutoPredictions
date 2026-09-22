@@ -1,10 +1,10 @@
 # MCSR Auto Predictions
 
-This is a basic local webapp for automatically running Twitch predictions for MCSR matches.
+This is a basic Windows local webapp for automatically running Twitch predictions for MCSR matches.
 
 ## Running the app
 
-To run, double click MCSRAutoPredictions.exe
+To run, download `MCSRAutoPredictions.exe` from the Releases section of this repo, then run the .exe on Windows.
 
 You may get a security warning. Run the app anyway, and/or verify the contents of the .exe using the instructions below if you want to be certain it's safe.
 
@@ -21,10 +21,12 @@ If you'd like to verify that the .exe matches the contents of this git repositor
 Get the hash:
 
 ```powershell
-Get-FileHash .\dist\AutoPredictions.exe -Algorithm SHA256
+Get-FileHash .\MCSRAutoPredictions.exe -Algorithm SHA256
 ```
 
 Compare the `Hash` value with the published hash. Same hash = same file and therefore matches the contents of this git repo.
+
+Current SHA-256 hash: 5A272F5760830BC17D4DE32B840BF9F62BF0ADD5E289EE997DF4B7AA5FCD99CB
 
 ## Build
 
@@ -43,7 +45,7 @@ Run:
 The file will be here:
 
 ```text
-dist\AutoPredictions.exe
+MCSRAutoPredictions.exe
 ```
 
 
