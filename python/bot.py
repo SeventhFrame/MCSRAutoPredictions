@@ -112,8 +112,8 @@ def end_prediction(
 
     response = requests.patch(
         TWITCH_PREDICTIONS_URL,
-        params=params,
         headers=twitch_headers(bearer_id, client_id),
+        json=params,
         timeout=5,
     )
     if not response.ok:
