@@ -24,6 +24,13 @@ To finish using the app, click 'Stop Bot'. This will cancel the latest ongoing p
 
 If you'd like to verify that the .exe matches the contents of this git repository:
 
+- Open terminal or powershell in windows.
+- Navigate to where the .exe is located using cd. E.g.:
+
+```powershell
+cd downloads
+```
+
 Get the hash:
 
 ```powershell
