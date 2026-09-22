@@ -22,6 +22,12 @@ To finish using the app, click 'Stop Bot'. This will cancel the latest ongoing p
 
 The bot is hard-coded to run predictions with title "DO I WIN?" and outcomes "YES" or "NO" with a 120 second betting duration. In a future release you will be able to configure these in the webapp.
 
+### Reliability / fixing errors
+
+The bot should be fairly reliable, but it might become desynced with the actual state of your predictions in edge cases, e.g. if Twitch API times out or if you manually amend the predictions.
+
+If this happens, simply stop the bot and end any predictions you have open if needed, then restart the bot. Should fix any problems.
+
 ## Verifying the app contents
 
 If you'd like to verify that the .exe matches the contents of this git repository:
