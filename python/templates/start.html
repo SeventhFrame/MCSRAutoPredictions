@@ -1,7 +1,46 @@
 <h1>MCSR Twitch predictions auto-runner</h1>
-<p>Bot started.</p>
+<p id="bot-status">{% if stopped %}Bot stopped.{% else %}Bot started.{% endif %}</p>
 
-<form action="/predictions" method="post">
-	<input type="hidden" name="username" value="{{ name }}">
-	<button type="submit">Stop predictions</button>
+<form action="/stop" method="post">
+	<input type="hidden" name="mcsr_name" value="{{ mcsr_name }}">
+	<button id="stop-button" type="submit">Stop predictions</button>
 </form>
+
+<p>
+	<a id="reset-link" href="/mcsr-info"{% if not stopped %} hidden{% endif %}>
+		Re-enter MCSR username
+	</a>
+</p>
+
+{% if not stopped %}
+<script>
+	const statusText = document.getElementById("bot-status");
+	const stopButton = document.getElementById("stop-button");
+	const resetLink = document.getElementById("reset-link");
+
+	async function refreshStatus() {
+		const response = await fetch("/status");
+		const state = await response.json();
+
+		if (state.status === "running") {
+			statusText.textContent = "Bot started.";
+			resetLink.hidden = true;
+			return;
+		}
+
+		stopButton.disabled = true;
+		resetLink.hidden = false;
+		statusText.textContent = state.status === "error"
+			? `Bot stopped: ${state.message}`
+			: "Bot stopped.";
+	}
+
+	refreshStatus();
+	const statusTimer = setInterval(async () => {
+		await refreshStatus();
+		if (stopButton.disabled) {
+			clearInterval(statusTimer);
+		}
+	}, 1000);
+</script>
+{% endif %}

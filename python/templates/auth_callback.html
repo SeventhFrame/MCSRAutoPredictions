@@ -4,9 +4,12 @@
 <script>
   const params = new URLSearchParams(window.location.hash.slice(1));
   const token = params.get("access_token");
+  const error = params.get("error_description") || params.get("error");
   const message = document.getElementById("message");
 
-  if (!token) {
+  if (error) {
+    message.textContent = `Twitch authorization failed: ${error}`;
+  } else if (!token) {
     message.textContent = "No access token was returned.";
   } else {
     fetch("/auth/token", {
@@ -21,7 +24,7 @@
         return response.json();
       })
       .then(() => {
-        window.location.replace("/");
+        window.location.replace("/mcsr-info");
       })
       .catch(() => {
         message.textContent = "Twitch login failed.";

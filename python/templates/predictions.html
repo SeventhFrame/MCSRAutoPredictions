@@ -1,7 +1,18 @@
 <h1>MCSR Twitch predictions auto-runner</h1>
-<p>Name is {{ name }}</p>
 
-<form action="/start" method="post">
-	<input type="hidden" name="username" value="{{ name }}">
-	<button type="submit">Start predictions</button>
-</form>
+{% if error %}
+	<p>{{ error }}</p>
+
+	<form action="/predictions" method="post">
+		<input type="text" name="mcsr_name" value="{{ mcsr_name or '' }}">
+		<button type="submit">Try again</button>
+	</form>
+{% elif success %}
+	<p>Found MCSR user: {{ mcsr_name }}</p>
+
+	<form action="/start" method="post">
+		<input type="hidden" name="mcsr_name" value="{{ mcsr_name }}">
+		<input type="hidden" name="mcsr_id" value="{{ mcsr_id }}">
+		<button type="submit">Start predictions</button>
+	</form>
+{% endif %}
