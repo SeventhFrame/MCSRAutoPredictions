@@ -1,0 +1,21 @@
+http://localhost:3000/#access_token=ihmvk6clac18qb8rsszajxidr2eon2&scope=moderator%3Amanage%3Ablocked_terms&token_type=bearer
+
+
+
+
+
+curl -X POST 'https://api.twitch.tv/helix/moderation/blocked_terms?broadcaster_id=25537783&moderator_id=25537783' \
+-H 'Authorization: Bearer ihmvk6clac18qb8rsszajxidr2eon2' \
+-H 'Client-Id: oo93hqbdqso4wgw0guen9rw21lg96f' \
+-H 'Content-Type: application/json' \
+-d '{"text":"lololololololol"}'
+
+
+
+{"data":[{"id":"25537783","login":"noctale__","display_name":"noctale__","type":"","broadcaster_type":"","description":"","profile_image_url":"https://static-cdn.jtvnw.net/jtv_user_pictures/cb3a59ae-e38e-4e6e-94e8-f31e17ca2940-profile_image-300x300.png","offline_image_url":"","view_count":0,"created_at":"2011-10-17T20:57:55Z"}]}⏎   
+
+
+
+curl -X GET 'https://api.twitch.tv/helix/moderation/blocked_terms?broadcaster_id=25537783&moderator_id=25537783&first=10' \
+-H 'Authorization: Bearer ihmvk6clac18qb8rsszajxidr2eon2' \
+-H 'Client-Id: oo93hqbdqso4wgw0guen9rw21lg96f'
