@@ -2,6 +2,12 @@
 
 This is a basic Windows local webapp for automatically running Twitch predictions for MCSR matches.
 
+## Download
+
+Download the latest Windows build from GitHub Releases:
+
+- [Latest release](https://github.com/SeventhFrame/MCSRAutoPredictions/releases/latest)
+
 ## Running the app
 
 To run, download `MCSRAutoPredictions.exe` from the Releases section of this repo, then run the .exe on Windows.
