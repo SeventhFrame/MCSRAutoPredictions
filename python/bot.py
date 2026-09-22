@@ -62,7 +62,7 @@ def create_prediction(bearer_id, client_id, broadcaster_id):
         headers=twitch_headers(bearer_id, client_id),
         json={
             "broadcaster_id": broadcaster_id,
-            "title": "WILL I WIN?",
+            "title": "DO I WIN?",
             "outcomes": [
                 {"title": "YES"},
                 {"title": "NO"},

@@ -1,6 +1,6 @@
 # MCSR Auto Predictions
 
-This is a basic Windows local webapp for automatically running Twitch predictions for MCSR matches.
+This is a basic Windows local webapp for automatically running Twitch predictions for Minecraft Speedrunning (MCSR) Ranked matches.
 
 ## Download
 
@@ -19,6 +19,8 @@ A console window will open and the app will open your default browser. The app w
 The app works by getting a token from twitch, storing it on your PC, using that token to run predictions via the Twitch API. It then polls public MCSR match history using your MCSR username, which you supply. Whenever you finish a match in MCSR, the app will check whether you won and then resolve the prediction. Then it'll start the next prediction.
 
 To finish using the app, click 'Stop Bot'. This will cancel the latest ongoing prediction.
+
+The bot is hard-coded to run predictions with title "DO I WIN?" and outcomes "YES" or "NO" with a 120 second betting duration. In a future release you will be able to configure these in the webapp.
 
 ## Verifying the app contents
 
@@ -39,7 +41,7 @@ Get-FileHash .\MCSRAutoPredictions.exe -Algorithm SHA256
 
 Compare the `Hash` value with the published hash. Same hash = same file and therefore matches the contents of this git repo.
 
-Current SHA-256 hash: 5A272F5760830BC17D4DE32B840BF9F62BF0ADD5E289EE997DF4B7AA5FCD99CB
+Current SHA-256 hash: 760AB53946B2C1F72E2A9B85770D9BE97FDF38472283EBE8276FFC0298211A83
 
 ## Build
 
