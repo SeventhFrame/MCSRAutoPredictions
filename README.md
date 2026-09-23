@@ -1,6 +1,6 @@
 # MCSR Auto Predictions
 
-This is a basic Windows local webapp for automatically running Twitch predictions for Minecraft Speedrunning (MCSR) Ranked matches.
+This is a basic local webapp on Windows for automatically running Twitch predictions for Minecraft Speedrunning (MCSR) Ranked matches.
 
 ## Download
 
@@ -12,7 +12,7 @@ Download the latest Windows build from GitHub Releases:
 
 To run, download `MCSRAutoPredictions.exe` from the Releases section of this repo, then run the .exe on Windows.
 
-You may get a security warning. Run the app anyway, and/or verify the contents of the .exe using the instructions below if you want to be certain it's safe.
+You may get a security warning. Run the app anyway if you trust the author (i.e., me), or build the project yourself from the source code using the instructions in below section.
 
 A console window will open and the app will open your default browser. The app will run on a local web server (i.e., your PC) so your browser can open the app. No data runs to any external servers/clients apart from Twitch, the app itself will run locally and store any data on your system.
 
@@ -28,34 +28,13 @@ The bot should be fairly reliable, but it might become desynced with the actual 
 
 If this happens, simply stop the bot and end any predictions you have open if needed, then restart the bot. Should fix any problems.
 
-## Verifying the app contents
-
-If you'd like to verify that the .exe matches the contents of this git repository:
-
-- Open terminal or powershell in windows.
-- Navigate to where the .exe is located using cd. E.g.:
-
-```powershell
-cd downloads
-```
-
-Get the hash:
-
-```powershell
-Get-FileHash .\MCSRAutoPredictions.exe -Algorithm SHA256
-```
-
-Compare the `Hash` value with the published hash. Same hash = same file and therefore matches the contents of this git repo.
-
-Current SHA-256 hash: 760AB53946B2C1F72E2A9B85770D9BE97FDF38472283EBE8276FFC0298211A83
-
 ## Build
 
-If you'd like to build the project yourself (windows only):
+If you'd like to build the project yourself on windows:
 
-- Install Python 3.12.
+- Install Python 3.14
 
-- Open PowerShell in this folder.
+- Open PowerShell in this folder
 
 Run:
 
@@ -63,7 +42,7 @@ Run:
 .\build-windows.ps1
 ```
 
-The file will be here:
+The file will be created in directory as:
 
 ```text
 MCSRAutoPredictions.exe
