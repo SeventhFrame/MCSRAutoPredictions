@@ -17,6 +17,8 @@ def timestamp():
     return dt.datetime.now(dt.timezone.utc).strftime("%Y/%m/%d %H:%M")
 
 def parse_match_time(value):
+    if isinstance(value, (int, float)):
+        return dt.datetime.fromtimestamp(value, tz=dt.timezone.utc)
     return dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
 
 def get_latest_match(player):
